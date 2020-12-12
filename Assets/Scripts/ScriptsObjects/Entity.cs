@@ -2,22 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Entity 
+public abstract class Entity 
 {
     // identité
-    string name;
-    List<string> item;
+    public string _name;
+    public List<string> _item;
 
     // faculté
-    float force;
-    float speed;
-    float life;
-    float damage;
-    float precision;
-    float muscularMass;
+    public float _force;
+    public float _speed;
+    public float _life;
+    public float _damage;
+    public float _precision;
+    public float _muscularMass;
+    public float _resistance;
+    public float _scoreAttackQTE;
+    public float _scoreDefenceQTE;
+    public float _scoreQTE;
 
-    //
-    bool ko;
-    bool loose;
-    bool win;
+    // état
+    public bool _isAttack;
+    public bool _isDefence;
+    public bool _ko;
+    public bool _isLoosing;
+    public bool _isWinning;
+
+    public abstract void LessLife();
+    public abstract void ForceQTE();
+    public abstract void DefenceQTE();
+    public abstract void ScoreQTE();
 }
