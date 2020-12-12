@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class QTESys : MonoBehaviour
+public class JackpotQTESys : MonoBehaviour
 {
     [SerializeField] GameObject _displayBox;
     [SerializeField] GameObject _passBox;
@@ -23,17 +24,17 @@ public class QTESys : MonoBehaviour
             if(_QTEGen == 1)
             {
                 _waitingForKey = 1;
-                _displayBox.GetComponent<Text>().text = "[E]";
+                _displayBox.GetComponent<TMP_Text>().text = "[E]";
             }
             if (_QTEGen == 2)
             {
                 _waitingForKey = 1;
-                _displayBox.GetComponent<Text>().text = "[R]";
+                _displayBox.GetComponent<TMP_Text>().text = "[R]";
             }
             if (_QTEGen == 3)
             {
                 _waitingForKey = 1;
-                _displayBox.GetComponent<Text>().text = "[T]";
+                _displayBox.GetComponent<TMP_Text>().text = "[T]";
             }
         }
 
@@ -94,11 +95,11 @@ public class QTESys : MonoBehaviour
         if(_correctKey == 1)
         {
             _countingDown = 2;
-            _passBox.GetComponent<Text>().text = "PASS!";
+            _passBox.GetComponent<TMP_Text>().text = "PASS!";
             yield return new WaitForSeconds(1.5f);
             _correctKey = 0;
-            _passBox.GetComponent<Text>().text = "";
-            _displayBox.GetComponent<Text>().text = "";
+            _passBox.GetComponent<TMP_Text>().text = "";
+            _displayBox.GetComponent<TMP_Text>().text = "";
             yield return new WaitForSeconds(1.5f);
             _waitingForKey = 0;
             _countingDown = 1;
@@ -106,11 +107,11 @@ public class QTESys : MonoBehaviour
         if (_correctKey == 2)
         {
             _countingDown = 2;
-            _passBox.GetComponent<Text>().text = "FAIL!";
+            _passBox.GetComponent<TMP_Text>().text = "FAIL!";
             yield return new WaitForSeconds(1.5f);
             _correctKey = 0;
-            _passBox.GetComponent<Text>().text = "";
-            _displayBox.GetComponent<Text>().text = "";
+            _passBox.GetComponent<TMP_Text>().text = "";
+            _displayBox.GetComponent<TMP_Text>().text = "";
             yield return new WaitForSeconds(1.5f);
             _waitingForKey = 0;
             _countingDown = 1;
@@ -124,11 +125,11 @@ public class QTESys : MonoBehaviour
         {
             _QTEGen = 4;
             _countingDown = 2;
-            _passBox.GetComponent<Text>().text = "FAIL!";
+            _passBox.GetComponent<TMP_Text>().text = "FAIL!";
             yield return new WaitForSeconds(1.5f);
             _correctKey = 0;
-            _passBox.GetComponent<Text>().text = "";
-            _displayBox.GetComponent<Text>().text = "";
+            _passBox.GetComponent<TMP_Text>().text = "";
+            _displayBox.GetComponent<TMP_Text>().text = "";
             yield return new WaitForSeconds(1.5f);
             _waitingForKey = 0;
             _countingDown = 1;
